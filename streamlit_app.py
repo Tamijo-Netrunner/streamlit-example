@@ -25,8 +25,8 @@ import numpy as np
 
 
 chart_data = pd.DataFrame(
-    x = np.array(["A", "B", "C", "D"])
-    y = np.array([3, 8, 1, 10])
+    y = np.array([3, 8, 1, 10]),
+    columns = ["A", "B", "C", "D"])
 
 st.bar_chart(chart_data)
 
