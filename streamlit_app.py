@@ -15,15 +15,21 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
-import matplotlib
-import matplotlib.pyplot as plt
+
+
+
+
+import streamlit as st
+import pandas as pd
 import numpy as np
 
-x = np.array(["A", "B", "C", "D"])
-y = np.array([3, 8, 1, 10])
 
-plt.bar(x,y)
-plt.show()
+chart_data = pd.DataFrame(
+    x = np.array(["A", "B", "C", "D"])
+    y = np.array([3, 8, 1, 10])
+
+st.bar_chart(chart_data)
+
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral.", 1, 5000, 2000)
