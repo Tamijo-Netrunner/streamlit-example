@@ -18,8 +18,8 @@ In the meantime, below is an example of what you can do with just a few lines of
 
 
 chart_data = pd.DataFrame(
-    y = np.array([3, 8, 1, 10]),
-    columns = ["A", "B", "C", "D"])
+    np.random.randn(20, 3),
+    columns=["a", "b", "c"])
 
 st.bar_chart(chart_data)
 
