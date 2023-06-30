@@ -22,6 +22,7 @@ chart_data = pd.DataFrame(
     columns=["a", "b", "c"])
 
 st.bar_chart(chart_data)
+print(chart_data)
 
 
 with st.echo(code_location='below'):
