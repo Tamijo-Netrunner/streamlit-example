@@ -49,7 +49,7 @@ class NrdbClient:
     "last_updated":"2021-03-13T05:08:22+00:00"}
     """
         
-    def get_card(self, code)
+    def get_card(self, code):
         return https://netrunnerdb.com/api/2.0/public/card/01001
         
         
