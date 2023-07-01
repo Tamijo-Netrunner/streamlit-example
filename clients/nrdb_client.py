@@ -1,5 +1,7 @@
 from requests import request
 
+from .mock_data import Mocks
+
 class NrdbClient:
     """
     API Client class for calling the NetrunnerDB API: https://netrunnerdb.com/api/2.0/doc
