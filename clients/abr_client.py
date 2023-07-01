@@ -2,7 +2,7 @@ from datetime import date
 from dateutil import relativedelta
 from requests import request
 
-from .mock_abr_data import Mocks
+from .mock_data import Mocks
 
 class AbrClient:
     """
