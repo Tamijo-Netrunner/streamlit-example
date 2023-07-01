@@ -19,7 +19,7 @@ class NrdbClient:
     Authentication: None, for public APIs.  This app does not use private APIs.
     """
     
-    """
+    '''
     Card 01001 is defined as:
     {"imageUrlTemplate":"https://static.nrdbassets.com/v1/large/{code}.jpg",
     "data":
@@ -47,7 +47,7 @@ class NrdbClient:
     "success":true,
     "version_number":"2.0",
     "last_updated":"2021-03-13T05:08:22+00:00"}
-    """
+    '''
         
     def get_card(self, code):
         return https://netrunnerdb.com/api/2.0/public/card/01001
