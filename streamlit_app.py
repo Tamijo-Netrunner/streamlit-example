@@ -2,13 +2,13 @@ import base64
 import textwrap
 
 import streamlit as st
-#from clients.abr_client import AbrClient
+from clients.abr_client import AbrClient
 from Clients.nrdb_client import NrdbClient
 from data import mappings
 
 st.set_page_config(page_title="Netrunner", page_icon="assets/NSG-Visual-Assets/SVG/Game Symbols/NISEI_AGENDA.png")
 
-#abr_client = AbrClient()
+abr_client = AbrClient()
 nrdb_client = NrdbClient()
 
 def get_faction_glyph(faction_code):
