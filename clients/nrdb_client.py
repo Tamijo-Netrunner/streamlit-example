@@ -50,4 +50,24 @@ class NrdbClient:
     '''
         
     def get_card(self, code):
-        return "https://netrunnerdb.com/api/2.0/public/card/01001"
+        # Gets a card from /api/2.0/public/card/{card_code} with the given card code
+        # TODO: replace mocks with data from actual API call.
+        if code == Mocks.RUNNER["data"][0]["code"]:
+            return Mocks.RUNNER
+        elif code == Mocks.CORP["data"][0]["code"]:
+            return Mocks.CORP
+
+    def get_deck(self, id):
+        # Gets a deck from /api/2.0/public/deck/{deck_id} with the given deck id
+        # TODO: implement API call
+        pass
+
+    def get_faction(self, code):
+        # Gets a faction from /api/2.0/public/faction/{faction_code} with the given faction id
+        # TODO: implement API call
+        pass
+
+    def get_factions(self):
+        # Gets all factions from /api/2.0/public/factions
+        # TODO: implement API call
+        pass
