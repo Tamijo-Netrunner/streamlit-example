@@ -19,11 +19,11 @@ def get_faction_glyph(faction_code):
 
 
 def render_tournament(tournament):
-    "Event: " + tournament["title"]
-    "Location: " + tournament["location"]
-    "Date: " + tournament["date"]
-    "Format: " + tournament["format"]
-    "Cardpool: " + tournament["cardpool"]
+    "Event: " + tournament[title]
+    "Location: " + tournament[location]
+    "Date: " + tournament[date]
+    "Format: " + tournament[format]
+    "Cardpool: " + tournament[cardpool]
 
     runner_id = tournament["winner_runner_identity"]
     runner = nrdb_client.get_card(runner_id)["data"][0]
