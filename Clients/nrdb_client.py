@@ -50,8 +50,4 @@ class NrdbClient:
     '''
         
     def get_card(self, code):
-        return https://netrunnerdb.com/api/2.0/public/card/01001
-        
-        
-        
-        
+        return "https://netrunnerdb.com/api/2.0/public/card/01001"
