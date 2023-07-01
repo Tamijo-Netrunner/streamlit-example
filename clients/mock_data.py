@@ -1,4 +1,4 @@
-﻿class Mocks:
+﻿class MockNRDB:
     """
     This class contains mocked data representing the data returned from the ABR and NRDB APIs.
     """
