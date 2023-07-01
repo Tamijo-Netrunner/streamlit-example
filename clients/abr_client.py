@@ -2,7 +2,8 @@ from datetime import date
 from dateutil import relativedelta
 from requests import request
 
-from .mock_data import Mocks
+from .mock_data_2 import Mocks
+
 class AbrClient:
     """
     API Client class for calling the AlwaysBeRunning API: https://alwaysberunning.net/apidoc
