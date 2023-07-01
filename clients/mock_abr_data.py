@@ -1,4 +1,4 @@
-class Mock:
+class Mocks:
 
 	TOURNAMENT = [{
 		"id":3771,
