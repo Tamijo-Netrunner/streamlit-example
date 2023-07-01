@@ -8,7 +8,7 @@ from data import mappings
 
 st.set_page_config(page_title="Netrunner", page_icon="assets/NSG-Visual-Assets/SVG/Game Symbols/NISEI_AGENDA.png")
 
-abr_client = AbrClient()
+#abr_client = AbrClient()
 nrdb_client = NrdbClient()
 
 def get_faction_glyph(faction_code):
