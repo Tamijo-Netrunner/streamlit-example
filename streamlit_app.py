@@ -2,6 +2,7 @@ import base64
 import textwrap
 
 import streamlit as st
+
 from clients.abr_client import AbrClient
 from clients.nrdb_client import NrdbClient
 from data import mappings
