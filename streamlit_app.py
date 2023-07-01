@@ -1,46 +1,38 @@
-from collections import namedtuple
-import altair as alt
-import math
-import pandas as pd
+import base64
+import textwrap
+
 import streamlit as st
-import numpy as np
+from clients.abr_client import AbrClient
+from clients.nrdb_client import NrdbClient
+from data import mappings
 
-"""
-# Welcome to Streamlit!
+st.set_page_config(page_title="Netrunner", page_icon="assets/NSG-Visual-Assets/SVG/Game Symbols/NISEI_AGENDA.png")
 
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
+abr_client = AbrClient()
+nrdb_client = NrdbClient()
 
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
-
-In the meantime, below is an example of what you can do with just a few lines of code:
-"""
-
-
-chart_data = pd.DataFrame(
-    np.random.randn(20, 3),
-    columns=["a", "b", "c"])
-
-print(chart_data)
+def get_faction_glyph(faction_code):
+    mapping = mappings.FACTION_ASSETS.get(faction_code)
+    if mapping is not None:
+        return mappings.BASE_FACTION_GLYPH_PATH.format(mapping["glyph_path"])
 
 
-with st.echo(code_location='below'):
-    total_points = st.slider("Number of points in spiral.", 1, 5000, 2000)
-    num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
+def render_tournament(tournament):
+    "Event: " + tournament["title"]
+    "Location: " + tournament["location"]
+    "Date: " + tournament["date"]
+    "Format: " + tournament["format"]
+    "Cardpool: " + tournament["cardpool"]
 
-    Point = namedtuple('Point', 'x y')
-    data = []
+    runner_id = tournament["winner_runner_identity"]
+    runner = nrdb_client.get_card(runner_id)["data"][0]
+    st.write("Winner Runner: {}  ({})".format(runner["title"], runner["faction_code"]))
 
-    points_per_turn = total_points / num_turns
+    corp_id = tournament["winner_corp_identity"]
+    corp = nrdb_client.get_card(corp_id)["data"][0]
+    st.write("Winner Corp: {}  ({})".format(corp["title"], corp["faction_code"]))
 
-    for curr_point_num in range(total_points):
-        curr_turn, i = divmod(curr_point_num, points_per_turn)
-        angle = (curr_turn + 1) * 2 * math.pi * i / points_per_turn
-        radius = curr_point_num / total_points
-        x = radius * math.cos(angle)
-        y = radius * math.sin(angle)
-        data.append(Point(x, y))
 
-    st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
-        .mark_circle(color='#0068c9', opacity=0.5)
-        .encode(x='x:Q', y='y:Q'))
+"### Last Tournament"
+last_tournament = abr_client.get_tournament_results(1)[0]
+render_tournament(last_tournament)
