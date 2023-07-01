@@ -99,7 +99,7 @@
         "claim_conflict": False,
         "matchdata": True,
         "videos": 0,
-        "winner_runner_identity": "26066",
+        "winner_runner_identity": 01001,
         "winner_corp_identity": "21054",
         "rendered_in": 0.6298110485076904,
         "tournament_count": 2837
