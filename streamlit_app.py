@@ -2,8 +2,8 @@ import base64
 import textwrap
 
 import streamlit as st
-from clients.abr_client import AbrClient
-from clients.nrdb_client import NrdbClient
+#from clients.abr_client import AbrClient
+from Clients.nrdb_client import NrdbClient
 from data import mappings
 
 st.set_page_config(page_title="Netrunner", page_icon="assets/NSG-Visual-Assets/SVG/Game Symbols/NISEI_AGENDA.png")
