@@ -2,7 +2,7 @@ from datetime import date
 from dateutil import relativedelta
 from requests import request
 
-from .mock_data import Mocks
+from .mock_abr_data import Mocks
 
 class AbrClient:
     """
@@ -27,7 +27,7 @@ class AbrClient:
     def get_tournament_results(self, limit=DEFAULT_LIMIT):
         # Gets the last N tournament results from /api/tournaments/results, with a maximum of 500
         # TODO: replace mock_tournament with results from actual API call.
-        return [Mocks.TOURNAMENT]
+        return [Mocks.TOURNAMENT[0]]
 
     def filter_tournaments(self, start_date=ONE_MONTH_AGO, end_date=TODAY):
         # Gets all tournaments within the given start and end dates using /api/tournaments
