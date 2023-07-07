@@ -56,7 +56,7 @@
                 "title": "Azmari EdTech: Shaping the Future",
                 "type_code": "identity",
                 "uniqueness": False
-            }
+            },
             {
                 "code": "33057",
                 "deck_limit": 1,
